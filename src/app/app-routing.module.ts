@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AddComponent } from './Components/add/add.component';
-import { HomeComponent } from './Components/home/home.component'; 
-import { UpdateComponent } from './Components/update/update.component';
+import { RouterModule, Routes } from '@angular/router';
+import { CreateComponent } from './create/create.component';
+import { ReadComponent } from './read/read.component';
+
 
 const routes: Routes = [
-  { path:'', redirectTo:'/home', pathMatch:'full'},
-  {path:'home' , component: HomeComponent},
-  {path:'add', component:AddComponent},
-  {path:'update/:id', component:UpdateComponent}
+  {path:'create',component:CreateComponent},
+  {path:'create/:id',component:CreateComponent},
+  {path:'read',component:ReadComponent},
+ 
+
 ];
 
 @NgModule({

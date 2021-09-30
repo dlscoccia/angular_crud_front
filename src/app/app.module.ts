@@ -1,28 +1,34 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddComponent } from './Components/add/add.component';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { HomeComponent } from './Components/home/home.component';
-import { UpdateComponent } from './Components/update/update.component';
-import { FooterComponent } from './Components/footer/footer.component';
+import { CreateComponent } from './create/create.component';
+import { ReadComponent } from './read/read.component';
+
+import {HttpClientModule} from '@angular/common/http';
+import { ApiserviceService } from './services/apiservice.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { ListFilterPipe } from './pipes/listFilterPipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AddComponent,
-    UpdateComponent,
-    FooterComponent,
+    CreateComponent,
+    ReadComponent,
+    ListFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
+  providers: [ApiserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

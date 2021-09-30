@@ -1,8 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-light p-4">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">VideoCRUD <i class="fas fa-video"></i></a>
+<div class="container-fluid mt-5 background margin">
+  <h1 class="text-center">Movies Management</h1>
+  <div class='btn-container'>
+    <a routerLink="create" class="btn btn-success">Create</a>
+    &nbsp;
+    <a routerLink="read" class="btn btn-primary">Read</a>
   </div>
-</nav>
-
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+  <router-outlet></router-outlet>
+</div>
