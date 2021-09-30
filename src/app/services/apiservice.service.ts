@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ModalDismissReasons,NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Injectable({
   providedIn: 'root'
@@ -13,39 +12,54 @@ export class ApiserviceService {
               
     ) { }
   // connect frontend to backend
-  apiUrl='https://crud-ts-mysql.herokuapp.com/movies';
-  
+  apiUrl='  https://movie-crud-mean-api.herokuapp.com/api/';
+
   //get all data
 
-  getAllData():Observable<any>
+  getMovies():Observable<any>
   {
     return this._http.get(`${this.apiUrl}`);
   };
   //create data
-  createData(data:any):Observable<any>
+  addMovie(movie:Movie):Observable<any>
   {
-    console.log(data,'createapi==>')
-    return this._http.post(`${this.apiUrl}`,data);
+    return this._http.post(`${this.apiUrl}`,movie);
   };
 
   // delete data
-  deleteData(id:any):Observable<any>
+  deleteMovie(id:any):Observable<any>
   {
     return this._http.delete(`${this.apiUrl}/${id}`)
   };
 
     // update data
-    updateData(data:any,id:any):Observable<any>
+    updateMovie(movie:Movie,id:any):Observable<any>
     {
-      return this._http.put(`${this.apiUrl}/${id}`,data)
+      return this._http.put(`${this.apiUrl}/${id}`,movie)
     }
 
 
     //get single data
-    getSingleData(id:any):Observable<any>
+    getOneMovie(id:any):Observable<any>
     {
       
       return this._http.get(`${this.apiUrl}/${id}`)
     }
   
+  //search for movie name
+  searchMovies(name:string):Observable<any>
+  {
+    return this._http.get(`${this.apiUrl}movie/${name}`);
+  }
+
+}
+
+export interface Movie{
+  mov_id?:string;
+  mov_title?:string;
+  mov_year?:number;
+  mov_time?:number;
+  mov_lang:string;
+  mov_dt_rel:string;
+  mov_rel_country:string
 }

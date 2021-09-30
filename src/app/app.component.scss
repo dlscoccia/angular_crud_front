@@ -1,18 +1,24 @@
-.btn-container{
-  margin-top: 5px;
-  display: flex;
-  justify-content:center;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lato&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
 
-.background{
-  background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1459&q=80');
-  margin-top: 0;
-  background-size: cover;
-  background-position: center center;
+.navbar {
+  background-color: rgb(4, 11, 80);
+  font-size: 24px;
+  justify-content: space-between;
+  align-items: center;
 }
-.margin{
-  margin-top:0 !important;
+
+.navbar-brand {
+  color: #fff;
+  font-family: 'Fredoka One', cursive;
+  font-size: 32px;
 }
-.container-fluid{
-  height:100vh;
+
+.navbar-brand:hover {
+  color:#f7fff7;
 }
